@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="/empresa/lista">Empresas</a>
+		<a class="navbar-brand" href="/importacao/upload">Importação</a>
+		
+	</nav>
+
+	<br />
+
+	<div class="container">
+		<h4>
+			<label> Cadastrar empresas</label>
+		</h4>
+
+		<hr />
+
+		<!-- 		mensagens de retorno -->
+		<div th:if="${mensagem != null}">
+			<div class="alert alert-secondary" role="alert" th:text="${mensagem}"></div>
+		</div>
+
+		<div th:if="${mensagemErro != null}">
+			<div class="alert alert-secondary" role="alert"
+				th:text="${mensagemErro}"></div>
+		</div>
+		<!-- 		end  -->
+
+
+		<form th:action="@{/empresa/salvar}" th:method="post"
+			th:object="${empresa}">
+
+			<div class="row g-3">
+				<div class="col-md-6">
+					<label>Nome da empresa</label>
+					
+					 <input type="text"
+						th:field="*{nome}" class="form-control"
+						placeholder="ex: Ativa Contábil" aria-label="Razão Social"
+						required="required">
+				</div>
+
+				<div class="col-md-4">
+					<label>CNPJ</label> <input type="text" th:field="*{cnpj}" name="pj" id="pj"
+						class="form-control" placeholder="00.000.000/0000-00" required="required" onblur="mascaraCnpj(pj)">
+				</div>
+
+				<div class="col-md-2">
+					<label>Código domínio</label> <input type="text"
+						th:field="*{codDominio}" class="form-control" placeholder="ex: 01"
+						aria-label="Código domínio" required="required">
+				</div>
+			</div>
+			<br />
+			<button class="btn btn-primary" type="submit">Cadastrar</button>
+
+		</form>
+		<hr />
+		<br />
+
+		<div th:if="${empresas != null}">
+			<h4>
+				<label> Lista de Empresas</label>
+			</h4>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Empresa</th>
+						<th>CNPJ</th>
+						<th>Código domínio</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+
+				<tr th:each="empresa : ${empresas}">
+					<td th:text="${empresa.nome}"></td>
+					<td th:text="${empresa.cnpj}"></td>
+					<td th:text="${empresa.codDominio}"></td>
+					<td><a class="btn btn-sm btn-info"
+						th:href="@{/empresa/{id}/atualizar(id=${empresa.id})}">Editar</a></td>
+					<td><a class="btn btn-sm btn-info"
+						th:href="@{/empresa/{id}/remover(id=${empresa.id})}">Excluir</a></td>
+				</tr>
+			</table>
+
+
+
+		</div>
+
+
+
+	</div>
+
+
+	<script type="text/javascript" src="/js/funcoes.js" ></script>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+</body>
+</html>
