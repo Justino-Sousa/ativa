@@ -35,7 +35,7 @@ public class FuncoesSistema {
 		Date c = Calendar.getInstance().getTime();
 		String time = String.valueOf(c).replace(" ", "").replace("/", "-").replace(":", "-");
 		;
-		String path = storage.getLocation() + "/"+ time + Constantes.returnExtensao;
+		String path = storage.getLocation() + "/"+ time + Constantes.return_Extensao_TXT;
 
 		return path;
 	}
@@ -49,7 +49,7 @@ public class FuncoesSistema {
 		Date c = Calendar.getInstance().getTime();
 		String time = String.valueOf(c).replace(" ", "").replace("/", "-").replace(":", "-");
 		;
-		String path = storage.getLocation() + "/JS-" + time + Constantes.returnExtensao;
+		String path = storage.getLocation() + "/JS-" + time + Constantes.return_Extensao_TXT;
 
 		return path;
 	}
@@ -63,6 +63,19 @@ public class FuncoesSistema {
 		String outputFornecedores = returnPathOutput();
 		outputFornecedores = outputFornecedores.replace("JS-", "JS-Fornecedores-");
 		return outputFornecedores;
+	}
+	
+	/*
+	 * retorna o caminho de saida do arquivo de fornecedores
+	 * 
+	 */
+	public String returnPathOutputNfePlanilha() {
+
+		Date c = Calendar.getInstance().getTime();
+		String time = String.valueOf(c).replace(" ", "").replace("/", "-").replace(":", "-");
+		;
+		String outputNfePlanilha = storage.getLocation() + "/JS-NFSe-" + time + Constantes.return_Extensao_XLSX;
+		return outputNfePlanilha;
 	}
 	
 	/*

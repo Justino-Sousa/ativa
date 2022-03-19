@@ -13,10 +13,13 @@ public class Constantes {
 	public static final String nmMensagem = "mensagem";
 	public static final String redirectEmpresaList = "redirect:/empresa/lista";
 	public static final String redirectDownlod = "redirect:/importacao/download";
+	public static final String redirectDownlodNfse = "redirect:/importacao/downloadNfse";
 	public static final String returnViewEmpresaList = "empresa/list";
 	public static final String returnViewEmpresaEdit = "empresa/edit";
 	public static final String returnViewImportacao = "importacao/importacao";
+	public static final String returnViewNfse = "nfse/importacao";
 	public static final String returnViewDownload = "importacao/download";
-	public static final String returnExtensao = ".txt";
+	public static final String return_Extensao_TXT = ".txt";
+	public static final String return_Extensao_XLSX = ".xlsx";
 
 }

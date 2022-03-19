@@ -43,14 +43,14 @@
 	</nav>
 	<br />	<div class="container">
 		<h4>
-			<label> Converter arquivo</label>
+			<label> NFS-e - Excel</label>
 		</h4>
 
 		<hr />
 		<br /> <br />
 
 		<form class="row g-3" method="post"
-			th:action="@{/importacao/importar}" enctype='multipart/form-data'>
+			th:action="@{/importacao/importarNfse}" enctype='multipart/form-data'>
 
 
 			<div class="row">
@@ -58,28 +58,6 @@
 					<label for="formFile" class="form-label"> Faça upload do
 						arquivo</label> <input class="form-control" name="file" type="file"
 						id="formFile" required="required">
-				</div>
-
-				<div class="col-md-3">
-					<label for="formFile" class="form-label"> Periodo inicial</label> <input
-						class="form-control" name="pInicial" type="date"
-						required="required">
-				</div>
-			</div>
-			<br /> <br /> <br /> <br />
-			<div class="row">
-				<div class="col-md-6">
-					<label for="inputEmail4" class="form-label">Empresa</label> <select
-						class="form-select" required="required" name="idEmpresa">
-						<option selected disabled="disabled" value="">Selecione
-							uma empresa</option>
-						<option th:each="empresa : ${empresas}" th:value="${empresa.id}"
-							th:text="${empresa.nome}"></option>
-					</select>
-				</div>
-				<div class="col-md-3">
-					<label for="formFile" class="form-label"> Periodo final</label> <input
-						class="form-control" name="pFinal" type="date" required="required">
 				</div>
 			</div>
 			<br /> <br /> <br /> <br />
