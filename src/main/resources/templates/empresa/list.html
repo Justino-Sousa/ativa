@@ -85,7 +85,7 @@
 				</div>
 			</div>
 			<br />
-			<button class="btn btn-primary" type="submit">Cadastrar</button>
+			<button class="btn btn-outline-primary" type="submit">Cadastrar</button>
 
 		</form>
 		<hr />
@@ -110,19 +110,13 @@
 					<td th:text="${empresa.nome}"></td>
 					<td th:text="${empresa.cnpj}"></td>
 					<td th:text="${empresa.codDominio}"></td>
-					<td><a class="btn btn-sm btn-info"
+					<td><a class="btn btn-sm btn btn-outline-warning"
 						th:href="@{/empresa/{id}/atualizar(id=${empresa.id})}">Editar</a></td>
-					<td><a class="btn btn-sm btn-info"
+					<td><a class="btn btn-sm btn-outline-danger"
 						th:href="@{/empresa/{id}/remover(id=${empresa.id})}">Excluir</a></td>
 				</tr>
 			</table>
-
-
-
 		</div>
-
-
-
 	</div>
 
 
