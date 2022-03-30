@@ -1,0 +1,45 @@
+<meta charset="utf-8">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+
+			<div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#"
+						id="navbarDarkDropdownMenuLink" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false"> Cadastros </a>
+						<ul class="dropdown-menu dropdown-menu-dark"
+							aria-labelledby="navbarDarkDropdownMenuLink">
+							<li><a class="dropdown-item" href="/empresa/lista">Empresa</a></li>
+						</ul></li>
+				</ul>
+				<ul class="navbar-nav">
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#"
+						id="navbarDarkDropdownMenuLink" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false"> Conversão </a>
+						<ul class="dropdown-menu dropdown-menu-dark"
+							aria-labelledby="navbarDarkDropdownMenuLink">
+							<li><a class="dropdown-item" href="/importacao/upload">Importação
+									Domínio</a></li>
+							<li><a class="dropdown-item"
+								href="/importacao/uploadNfseExcel">NFS-e - Excel</a></li>
+						</ul></li>
+				</ul>
+			</div>
+			<form th:action="@{/logout}" method="post" class="form-inline my-2 my-lg-0">
+				<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+						fill="currentColor" class="bi bi-door-closed" viewBox="0 0 16 16">
+  						<path
+							d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z" />
+  						<path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" />
+					</svg> 
+					Logout 
+				</button>
+			</form>
+		</div>
+	</nav>
+		<br />
+	<br />
